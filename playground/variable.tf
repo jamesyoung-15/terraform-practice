@@ -4,6 +4,6 @@ variable "aws_region" {
 }
 
 variable "s3_bucket_name" {
-  type = string
+  type    = string
   default = "jyy15-test-bucket"
 }

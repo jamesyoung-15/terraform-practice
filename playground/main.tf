@@ -25,7 +25,7 @@ resource "random_string" "test" {
   length  = 16
   special = false
   numeric = false
-  upper = false
+  upper   = false
 }
 
 resource "aws_s3_bucket" "my-test-bucket" {

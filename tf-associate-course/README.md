@@ -100,3 +100,17 @@ Notes:
 - Destroy: Destroy remote objects in config
 
 ## Lab 5
+
+Main goal:
+
+- Understand Terraform state
+- Implement and maintain Terraform state
+
+Lab:
+
+- asd
+
+Notes:
+
+- Terraform State: Acts as a snapshot of the current infrastructure, where it tracks resources, maps configuration to resources, etc.
+- Backend Config: By default uses local, can also integrate with HCP Terraform or define own backend

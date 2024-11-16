@@ -108,9 +108,40 @@ Main goal:
 
 Lab:
 
-- asd
+- Create S3 backend, use remote backend
+- Create Terraform Cloud, use remote backend
+- Migrate state
 
 Notes:
 
 - Terraform State: Acts as a snapshot of the current infrastructure, where it tracks resources, maps configuration to resources, etc.
 - Backend Config: By default uses local, can also integrate with HCP Terraform or define own backend
+- Troubleshoot: If run into error with `failed to install provider` that says `doesn't match any of the
+│ checksums previously recorded in the dependency lock file;`, use `terraform providers lock` to pre-populate checksums for a variety of different platforms
+
+## Lab 6
+
+Main goals:
+
+- Understand local variables
+- Use different input variables (defaults, environment, tfvars, CLI)
+- Validate and suppress sensitive info
+- Data blocks
+- Built-in Functions
+- Dynamic Blocks
+- TF Graphs
+- Resource Lifecycle
+
+Notes:
+
+- Variables: Can use default, local, `.tfvars`, environment, CLI to set variables
+- Protecting Sensitive Info
+  - Mark with `sensitive = true` to avoid output directly (local State file will still show sensitive values in plain text)
+  - Can use environment variables for better security, but will still show in local state file
+  - Must protect state file, can use Terraform cloud to manage sensitive values
+- Data Blocks: Can be used to query and fetch data to use (eg. AMIs)
+- Dynamic Blocks: Used for repeatable nested blocks, avoid copy and pasting
+- Graph: Can use `terraform graph` and `webgraphviz.com` to visualize relationships between resources
+- Resource Lifecycle: Control order Terraform create and destroy resources
+  - eg. `create_before_destroy` a security group to prevent failure
+  - eg. `prevent_destroy` an instance for safeguard

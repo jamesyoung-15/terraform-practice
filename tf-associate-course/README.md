@@ -145,3 +145,20 @@ Notes:
 - Resource Lifecycle: Control order Terraform create and destroy resources
   - eg. `create_before_destroy` a security group to prevent failure
   - eg. `prevent_destroy` an instance for safeguard
+
+## Lab 7
+
+Main goals:
+
+- Understand Terraform Cloud
+  - Remote Backend
+  - Workspaces
+  - Secure variables
+  - Version Control
+  - Registries, Sentinel Policy, VCS Workflow
+
+Notes:
+
+- Workspaces: Helps manage multiple deployments with same config by different state files.
+- Sentinel Policy: Enforces logic-based policy decisions (eg. enforce tags, restrict ec2 instance types)
+  - 3 types: advisory, soft mandatory, hard mandatory
